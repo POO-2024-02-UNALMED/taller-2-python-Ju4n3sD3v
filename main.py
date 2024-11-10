@@ -10,6 +10,9 @@ class Auto:
         self.registro = registro   
 
     def cantidadAsientos(self) -> int:
+        for asiento in self.Asientos:
+            if type(asiento) == None:
+                self.Asientos.pop(asiento)
         nroAsientos = len(self.Asientos)
         return nroAsientos
     
@@ -46,3 +49,4 @@ class Asiento:
     def cambiarColor(self, nuevoColor: str) -> None:
         if nuevoColor.lower() in ['rojo', 'verde', 'amarillo', 'negro', 'blanco']:
             self.color = nuevoColor
+
